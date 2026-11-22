@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 228, 230, 235;
+  --background-start-rgb: 26, 29, 35;
+  --background-end-rgb: 26, 29, 35;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1d23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3f4b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4f5b;
+}
+
+/* Markdown styles */
+.markdown-content {
+  @apply text-dark-text;
+}
+
+.markdown-content h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-white;
+}
+
+.markdown-content h2 {
+  @apply text-2xl font-semibold mt-6 mb-3 text-white border-b border-dark-border pb-2;
+}
+
+.markdown-content h3 {
+  @apply text-xl font-semibold mt-4 mb-2 text-white;
+}
+
+.markdown-content h4 {
+  @apply text-lg font-semibold mt-3 mb-2 text-white;
+}
+
+.markdown-content p {
+  @apply my-4 leading-7;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply my-4 ml-6;
+}
+
+.markdown-content ul {
+  @apply list-disc;
+}
+
+.markdown-content ol {
+  @apply list-decimal;
+}
+
+.markdown-content li {
+  @apply my-2;
+}
+
+.markdown-content a {
+  @apply text-blue-400 hover:text-blue-300 underline;
+}
+
+.markdown-content code {
+  @apply bg-dark-hover px-2 py-1 rounded text-sm font-mono text-pink-400;
+}
+
+.markdown-content pre {
+  @apply bg-dark-hover p-4 rounded-lg my-4 overflow-x-auto;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0 text-gray-300;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic my-4 text-dark-muted;
+}
+
+.markdown-content table {
+  @apply w-full my-4 border-collapse;
+}
+
+.markdown-content th,
+.markdown-content td {
+  @apply border border-dark-border px-4 py-2;
+}
+
+.markdown-content th {
+  @apply bg-dark-hover font-semibold;
+}
+
+.markdown-content img {
+  @apply max-w-full h-auto rounded-lg my-4;
+}
+

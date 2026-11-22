@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  docuhub:
+    image: ghcr.io/agroplay-music-ltda/documentation/documentation:dev
+    container_name: docuhub
+    ports:
+      - "3000:3000"
+    volumes:
+      # Volume persistente OPCIONAL (banco já vem na imagem do Git)
+      # Descomente se quiser persistir mudanças no banco entre restarts
+      # - ./data:/app/data
+      - docuhub-data:/app/data
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  docuhub-data:
+    driver: local
+
